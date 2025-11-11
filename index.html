@@ -1,358 +1,121 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pertanian Digital</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petani Digital - Proyek MKWK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    :root{
-      --primary:#2e7d32;    /* hijau */
-      --accent:#66bb6a;
-      --bg:#f7fbf7;
-      --card:#ffffff;
-      --muted:#58606a;
-      --radius:12px;
-      --container:1100px;
-    }
-    *{box-sizing:border-box}
-    body{font-family:'Poppins',sans-serif;margin:0;background:var(--bg);color:#0b1220;line-height:1.6}
-    a{color:var(--primary);text-decoration:none}
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth}
+    body{background:#f7faf9;color:#333;overflow-x:hidden;}
+    header{position:fixed;top:0;left:0;width:100%;background:#2e7d32;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:15px 40px;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+    header h1{font-size:22px;font-weight:600;}
+    nav a{color:white;margin-left:20px;text-decoration:none;font-weight:500;transition:color .3s}
+    nav a:hover{color:#a5d6a7;}
+    section{padding:100px 40px;min-height:100vh;animation:fadeIn 1s ease;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 
-    /* Header */
-    header{background:linear-gradient(180deg,#ffffff,#f3fff3);padding:56px 20px 34px;box-shadow:0 8px 26px rgba(10,20,10,0.04)}
-    .wrap{max-width:var(--container);margin:0 auto;padding:0 20px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
-    header h1{font-size:28px;margin:8px 0 4px}
-    header p{margin:0;color:var(--muted)}
+    .hero{background:linear-gradient(135deg,#81c784,#388e3c);color:#fff;text-align:center;padding:150px 40px;}
+    .hero h2{font-size:42px;margin-bottom:10px;}
+    .hero p{font-size:18px;max-width:700px;margin:0 auto;}
 
-    /* Nav */
-    nav{max-width:var(--container);margin:12px auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}
-    .nav-list{display:flex;gap:18px;list-style:none;padding:0;margin:0}
-    .nav-list a{padding:10px 12px;border-radius:8px;color:#0b1220;font-weight:600}
-    .nav-list a:hover{background:rgba(46,125,50,0.06)}
+    .content{max-width:900px;margin:auto;line-height:1.7;font-size:17px;text-align:justify;}
 
-    /* Hero */
-    .hero{max-width:var(--container);margin:28px auto;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:28px}
-    .hero-card{background:var(--card);border-radius:14px;padding:28px;box-shadow:0 18px 40px rgba(6,12,8,0.03)}
-    .hero-title{color:var(--primary);font-size:26px;margin:0 0 8px}
-    .hero-desc{color:var(--muted);margin:0 0 14px}
-
-    /* quick stats */
-    .stats{display:flex;gap:12px;margin-top:12px}
-    .stat{flex:1;background:#fbfff8;padding:12px;border-radius:10px;text-align:center}
-    .stat h3{margin:0;color:var(--primary)}
-    .stat p{margin:6px 0 0;color:var(--muted);font-size:13px}
-
-    /* Slider (simple, formal) */
-    .slider-wrap{max-width:1000px;margin:24px auto 8px;border-radius:12px;overflow:hidden}
-    .slider{position:relative;background:var(--card);border-radius:12px;box-shadow:0 16px 36px rgba(6,12,8,0.04)}
-    .slides{position:relative;height:520px}
-    .slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease, transform 1s cubic-bezier(.2,.9,.2,1)}
-    .slide.active{opacity:1}
-    .slide img{width:120%;height:520px;object-fit:cover;transform-origin:center;transition:transform 1.2s ease}
-    .slide.active img{transform:translateX(0) scale(1)}
-    .slide.inactive img{transform:translateX(-6%) scale(1.04);opacity:.6}
-
-    .caption{position:absolute;left:28px;bottom:28px;background:rgba(46,125,50,0.9);color:white;padding:10px 14px;border-radius:8px;font-weight:700}
-
-    .arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:999px;background:var(--card);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px rgba(6,12,10,0.06);cursor:pointer;border:1px solid rgba(11,18,20,0.04)}
-    .arrow-left{left:16px}
-    .arrow-right{right:16px}
-
-    .dots{display:flex;gap:8px;justify-content:center;padding:14px;background:transparent}
-    .dot{width:10px;height:10px;border-radius:999px;background:rgba(11,18,20,0.12);cursor:pointer}
-    .dot.active{background:var(--primary)}
-
-    /* Sections */
-    section{max-width:var(--container);margin:34px auto;padding:28px;background:var(--card);border-radius:12px;box-shadow:0 8px 26px rgba(6,12,8,0.03)}
-    section h2{color:var(--primary);margin:0 0 10px}
-    section p.lead{color:var(--muted);margin:0 0 8px}
-
-    /* Team grid */
-    .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
-    .member{background:#fbfff8;padding:16px;border-radius:10px;text-align:center;box-shadow:0 6px 18px rgba(6,12,8,0.03);transition:transform .35s, box-shadow .35s}
-    .member:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(6,12,8,0.06)}
-    .avatar{width:110px;height:110px;border-radius:999px;margin:0 auto 10px;overflow:hidden;border:4px solid var(--primary)}
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.9s ease}
-    .member h3{margin:6px 0 0;font-size:18px}
-    .member p.role{margin:6px 0 0;color:var(--muted);font-size:14px}
-    /* subtle floating animation on avatars */
-    .avatar img{animation:float 6s ease-in-out infinite}
-    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
-
-    /* Material list */
-    .materials{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:14px}
-    .material{padding:14px;border-left:4px solid var(--accent);background:#fff;border-radius:8px;box-shadow:0 4px 12px rgba(6,12,8,0.03)}
-    .material h4{margin:0 0 8px;color:var(--primary)}
-    .material p{margin:0;color:var(--muted);font-size:14px}
-
-    /* Contact */
-    form{max-width:760px;margin:0 auto;display:grid;gap:12px}
-    input,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #d7dfd7}
-    button.submit{background:var(--primary);color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:700}
-    button.submit:hover{background:#247033}
-
-    footer{background:linear-gradient(180deg,#ffffff,#f3fff3);padding:26px;text-align:center;color:var(--muted);margin-top:24px}
-
-    /* responsive */
-    @media (max-width:980px){.hero{grid-template-columns:1fr;}.slides,.slide img{height:420px}.slide img{height:420px}.avatar{width:96px;height:96px}}
-    @media (max-width:560px){.slides,.slide img{height:300px}.slide img{height:300px;padding-bottom:0}.hero-card{padding:18px}section{padding:18px}}
+    .team-container,.petani-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;margin-top:50px;}
+    .member,.petani{background:#fff;border-radius:20px;box-shadow:0 4px 10px rgba(0,0,0,0.1);padding:20px;text-align:center;transition:transform .4s, box-shadow .4s;}
+    .member:hover,.petani:hover{transform:translateY(-10px);box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+    .avatar img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:10px;border:4px solid #a5d6a7;}
+    .member h3,.petani h3{font-size:18px;margin:10px 0 5px;}
+    .member p.role{color:#388e3c;font-weight:500;}
+    .petani img{width:100%;height:600px;object-fit:cover;border-radius:15px;}
+    footer{text-align:center;padding:30px;background:#2e7d32;color:white;}
   </style>
 </head>
 <body>
-
   <header>
-    <div class="wrap">
-      <div class="brand">
-        <div class="logo">Perdi</div>
-        <div>
-          <h1>Pertanian Digital</h1>
-          <p>Platform Pertanian Digital</p>
-        </div>
-      </div>
-    </div>
+    <h1>Petani Digital</h1>
+    <nav>
+      <a href="#beranda">Beranda</a>
+      <a href="#materi">Materi</a>
+      <a href="#tim">Tim</a>
+      <a href="#petani">Petani Digital</a>
+    </nav>
   </header>
 
-  <!-- navigation -->
-  <nav class="wrap" aria-label="Main navigation">
-    <ul class="nav-list">
-      <li><a href="#home">Beranda</a></li>
-      <li><a href="#tentang">Tentang</a></li>
-      <li><a href="#materi">Materi</a></li>
-      <li><a href="#kelompok">Kelompok Kami</a></li>
-      <li><a href="#kontak">Kontak</a></li>
-    </ul>
-  </nav>
-
-  <!-- hero -->
-  <main class="wrap">
-    <section class="hero">
-      <div class="hero-card" id="home">
-        <h2 class="hero-title">Pertanian Cerdas & Berkelanjutan</h2>
-        <p class="hero-desc">Kami mendukung petani melalui penerapan teknologi sederhana dan praktik terbaik agar produktivitas meningkat tanpa mengorbankan lingkungan. Platform ini berfokus pada monitoring, edukasi, dan akses pasar.</p>
-
-        <div class="stats" aria-hidden="true">
-          <div class="stat"><h3>78%</h3><p>Keefisienan Penggunaan Air</p></div>
-          <div class="stat"><h3>+18%</h3><p>Kenaikan Produktivitas</p></div>
-          <div class="stat"><h3>300+</h3><p>Petani Terdampak</p></div>
-        </div>
-      </div>
-
-      <!-- slider right -->
-      <aside style="display:flex;flex-direction:column;gap:14px;align-items:stretch;justify-content:center">
-        <div style="background:var(--card);border-radius:12px;padding:12px;box-shadow:0 12px 30px rgba(6,12,8,0.03)">
-          <div style="font-weight:700;color:var(--primary);margin-bottom:8px">Galeri Visual (Preview)</div>
-          <div class="slider-wrap" aria-hidden="true">
-            <div class="slider" id="slider">
-              <div class="slides" id="slides">
-                <div class="slide active" data-index="0">
-                  <img src="https://tse4.mm.bing.net/th/id/OIP.PsOaWCnGF8SSm03xt8w_4AHaE8?pid=Api&P=0&h=180" alt="Ladang padi">
-                  <div class="caption">Ladang Padi Modern</div>
-                </div>
-                <div class="slide" data-index="1">
-                  <img src="https://3.bp.blogspot.com/-jQ6jxgZX9FU/VcQX3hzE-DI/AAAAAAAATWg/7VDyqUp2Ns0/s1600/Membajak-sawah-dengan-traktor.jpg" alt="Traktor modern">
-                  <div class="caption">Traktor & Alat Modern</div>
-                </div>
-                <div class="slide" data-index="2">
-                  <img src="https://ik.trn.asia/uploads/2021/04/pertanian_.jpg" alt="sensor">
-                  <div class="caption">Pertanian</div>
-                </div>
-              </div>
-
-              <div class="arrow arrow-left" id="prev" aria-label="Sebelumnya">&#10094;</div>
-              <div class="arrow arrow-right" id="next" aria-label="Selanjutnya">&#10095;</div>
-            </div>
-            <div class="dots" id="dots" aria-hidden="true"></div>
-          </div>
-        </div>
-      </aside>
-    </section>
-  </main>
-
-  <!-- tentang -->
-  <section id="tentang" class="wrap" aria-labelledby="about-title">
-    <h2 id="about-title">Tentang Kami</h2>
-    <p class="lead">AgriTech Innovate adalah inisiatif untuk mengintegrasikan praktik pertanian tradisional dengan teknologi yang relevan sehingga petani mendapatkan informasi dan akses yang memadai untuk meningkatkan hasil panen, efisiensi penggunaan input, dan kesinambungan sumber daya.</p>
+  <section id="beranda" class="hero">
+    <h2>Proyek MKWK - Petani Digital</h2>
+    <p>Memanfaatkan teknologi digital untuk meningkatkan daya saing petani dan UMKM pertanian di sekitar Kampus Vokasi Jubung Universitas Jember.</p>
   </section>
 
-  <!-- materi -->
-  <section id="materi" class="wrap" aria-labelledby="materi-title">
-    <h2 id="materi-title">Materi Pertanian</h2>
-    <div class="materials" role="list">
-      <div class="material" role="listitem">
-        <h4>Pertanian Presisi</h4>
-        <p>Penggunaan data lokasi dan sensor untuk menyesuaikan pemupukan, pemupukan, dan pengairan pada tingkat yang lebih detail.</p>
-      </div>
-      <div class="material" role="listitem">
-        <h4>IoT & Monitoring</h4>
-        <p>Deploy sensor kelembaban tanah, suhu, dan cuaca untuk mendukung keputusan operasional sehari-hari.</p>
-      </div>
-      <div class="material" role="listitem">
-        <h4>Hidroponik & Sistem Terkendali</h4>
-        <p>Budidaya tanpa tanah yang efisien ruang dan air, cocok untuk area perkotaan dan lahan terbatas.</p>
-      </div>
-      <div class="material" role="listitem">
-        <h4>Pengendalian Hama Terpadu</h4>
-        <p>Penerapan metode yang menggabungkan observasi, pemantauan, dan intervensi selektif untuk keamanan pangan dan lingkungan.</p>
-      </div>
-      <div class="material" role="listitem">
-        <h4>Drone & Pemetaan</h4>
-        <p>Pemantauan lahan luas secara cepat untuk deteksi stress tanaman, area kekeringan, dan estimasi hasil.</p>
-      </div>
-      <div class="material" role="listitem">
-        <h4>Pasar & Logistik</h4>
-        <p>Platform digital untuk menghubungkan petani langsung ke pembeli, mengurangi rantai distribusi.</p>
-      </div>
+  <section id="materi">
+    <h2 style="text-align:center;color:#2e7d32;">Materi</h2><br>
+    <div class="content">
+      <p>Selama revolusi industri 4.0, kemajuan teknologi digital telah membawa perubahan besar dalam berbagai bidang kehidupan, termasuk sektor pertanian. Digitalisasi membuka peluang baru untuk manajemen bisnis, meningkatkan jaringan pasar, dan meningkatkan efisiensi produksi. Namun, sebagian besar petani tradisional dan pelaku Usaha Mikro, Kecil, dan Menengah (UMKM) pertanian belum mampu menyesuaikan diri dengan perubahan ini.</p><br>
+      <p>Salah satu penyebab utama rendahnya daya saing petani dan UMKM pertanian adalah keterbatasan literasi digital. Banyak pelaku usaha tidak tahu cara memanfaatkan teknologi seperti media sosial, pasar, atau aplikasi pertanian digital untuk meningkatkan nilai jual produk mereka. Selain itu, kemampuan digital masyarakat tani belum berkembang dengan baik karena kurangnya pelatihan dan pendampingan yang berkelanjutan.</p><br>
+      <p>Pilihan proyek "Pemanfaatan platform digital untuk pengembangan UMKM dan petani di bidang pertanian sekitar kampus vokasi Jubung Universitas Jember" didasarkan pada kebutuhan nyata di lapangan. Proyek ini sejalan dengan mata kuliah Proyek Pembelajaran MKWK, yang menekankan pengabdian dan kontribusi siswa kepada masyarakat melalui pendekatan interdisipliner dalam sektor pertanian.</p><br>
+      <p>Pelatihan ini bertujuan untuk meningkatkan kesadaran tentang pentingnya literasi digital bagi petani dan pelaku UMKM pertanian serta memberikan keterampilan praktis yang dapat diterapkan secara langsung dalam kegiatan usaha mereka. Diharapkan dengan pelatihan ini, petani dan pelaku UMKM pertanian dapat memanfaatkan teknologi digital untuk meningkatkan kesejahteraan ekonomi lokal, memperluas pasar, dan membangun strategi pemasaran yang lebih baik.</p>
     </div>
   </section>
 
-  <!-- kelompok (7 orang) -->
-  <section id="kelompok" class="wrap" aria-labelledby="team-title">
-    <h2 id="team-title">Kelompok Kami</h2>
-    <p class="lead">Tim project — bertanggung jawab pada riset, pengembangan konten, desain, dan dokumentasi.</p>
-
-    <div class="team-grid" role="list">
+  <section id="tim">
+    <h2 style="text-align:center;color:#2e7d32;">Tim</h2>
+    <div class="team-container">
       <!-- 1 -->
-      <div class="member" role="listitem">
-        <div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_c70945c3.jpg?updatedAt=1762850909209" alt="Valian"></div>
-        <h3>Jesika Ayu Amanda</h3>
-        <p class="role">250803102002</p>
+      <div class="member">
+        <div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_c70945c3.jpg?updatedAt=1762850909209" alt="Jesika"></div>
+        <h3>Jesika Ayu Amanda</h3><p class="role">250803102002</p>
       </div>
       <!-- 2 -->
-      <div class="member" role="listitem">
-        <div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.26_f52d2940.jpg?updatedAt=1762850615327" alt="Dimas"></div>
-        <h3>Steven Cristian Siswanto</h3>
-        <p class="role">250903101002</p>
+      <div class="member">
+        <div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.26_f52d2940.jpg?updatedAt=1762850615327" alt="Steven"></div>
+        <h3>Steven Cristian Siswanto</h3><p class="role">250903101002</p>
       </div>
       <!-- 3 -->
-      <div class="member" role="listitem">
-        <div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_5338be5f.jpg?updatedAt=1762850981762" alt="Rara"></div>
-        <h3>Iis Nur Khoirunnisa</h3>
-        <p class="role">250903101020</p>
+      <div class="member">
+        <div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_5338be5f.jpg?updatedAt=1762850981762" alt="Iis"></div>
+        <h3>Iis Nur Khoirunnisa</h3><p class="role">250903101020</p>
       </div>
       <!-- 4 -->
-      <div class="member" role="listitem">
-        <div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.26_8f59d3d1.jpg?updatedAt=1762850531357" alt="Sinta"></div>
-        <h3>Valian Adib Widigda</h3>
-        <p class="role">250903101036</p>
+      <div class="member">
+        <div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.26_8f59d3d1.jpg?updatedAt=1762850531357" alt="Valian"></div>
+        <h3>Valian Adib Widigda</h3><p class="role">250903101036</p>
       </div>
       <!-- 5 -->
-      <div class="member" role="listitem">
-        <div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.26_27d1c4a6.jpg?updatedAt=1762850576072" alt="Arman"></div>
-        <h3>Adiba Nabil Cesario</h3>
-        <p class="role">250903101038</p>
+      <div class="member">
+        <div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.26_27d1c4a6.jpg?updatedAt=1762850576072" alt="Adiba"></div>
+        <h3>Adiba Nabil Cesario</h3><p class="role">250903101038</p>
       </div>
       <!-- 6 -->
-      <div class="member" role="listitem">
-        <div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_70f81bea.jpg?updatedAt=1762850888914" alt="Maya"></div>
-        <h3>Rizquna Alya Nuryatun Azizah</h3>
-        <p class="role">250903101040</p>
+      <div class="member">
+        <div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_70f81bea.jpg?updatedAt=1762850888914" alt="Rizquna"></div>
+        <h3>Rizquna Alya Nuryatun Azizah</h3><p class="role">250903101040</p>
       </div>
       <!-- 7 -->
-      <div class="member" role="listitem">
-        <div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_71d73241.jpg?updatedAt=1762850939719" alt="Bayu"></div>
-        <h3>Azka Naysila Fahima Nadya</h3>
-        <p class="role">250903101042</p>
+      <div class="member">
+        <div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_71d73241.jpg?updatedAt=1762850939719" alt="Azka"></div>
+        <h3>Azka Naysila Fahima Nadya</h3><p class="role">250903101042</p>
       </div>
     </div>
   </section>
 
-  <!-- kontak -->
-  <section id="kontak" class="wrap" aria-labelledby="contact-title">
-    <h2 id="contact-title">Kontak</h2>
-    <p class="lead">Jika ingin berkolaborasi atau bertanya lebih lanjut, silakan isi formulir berikut atau hubungi email kami.</p>
-
-    <form action="mailto:iisazka@email.com" method="post" enctype="text/plain" style="margin-top:16px">
-      <input type="text" name="Nama" placeholder="Nama lengkap" required>
-      <input type="email" name="Email" placeholder="Alamat email" required>
-      <input type="text" name="Subjek" placeholder="Subjek (opsional)">
-      <textarea name="Pesan" placeholder="Pesan Anda" rows="6" required></textarea>
-      <div style="text-align:right;margin-top:6px">
-        <button class="submit" type="submit">Kirim Pesan</button>
+  <section id="petani">
+    <h2 style="text-align:center;color:#2e7d32;">Petani Digital</h2>
+    <div class="petani-container">
+      <div class="petani">
+        <img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2018.23.12_2b5f2a56.jpg?updatedAt=1762860350875" alt="Wisnu">
+        <h3>Wisnu</h3>
+        <p>Sudah menjadi petani sejak tahun 2011. Jenis padi yang biasa ditanam: Way Apo, Sunggal, Inpari 32, dan Situ Bagendit. Hasil panen dijual ke pembibitan dan perusahaan beras. Lulusan SMA dengan pengalaman panjang hingga mampu menguliahkan anak-anaknya.</p>
       </div>
-    </form>
-
-    <p style="text-align:center;margin-top:16px;color:var(--muted)">Atau kirim email langsung ke <strong>iisazka@email.com</strong></p>
+      <div class="petani">
+        <img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2018.22.44_52ad97c9.jpg?updatedAt=1762860350992" alt="Ali Topan">
+        <h3>Ali Topan</h3>
+        <p>Aktif membuat konten di TikTok dengan nama “alitopan”. Bekerja di Mitra Tani selama 15 tahun dan telah bermitra sebagai petani selama 1 tahun. Menanam okra dengan sistem kemitraan, hasil panen dikirim ke Mitra Tani. Harga jual okra bagus Rp6.000/kg dan kualitas sedang Rp3.000/kg berdasarkan kontrak tetap.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <div class="wrap">
-      <small>© 2025 Pertanian Digital— Semua hak dilindungi.</small>
-    </div>
+    <p>© 2025 Proyek MKWK - Petani Digital Universitas Jember</p>
   </footer>
-
-  <script>
-    // Simple slider logic (auto + arrows + dots)
-    (function(){
-      const slides = Array.from(document.querySelectorAll('.slides .slide'));
-      const prev = document.getElementById('prev');
-      const next = document.getElementById('next');
-      const dotsWrap = document.getElementById('dots');
-      if(!slides.length) return;
-      let idx = 0, timer = null, AUTO = 4000;
-
-      // create dots
-      slides.forEach((s,i)=>{
-        const d = document.createElement('div'); d.className='dot'; if(i===0) d.classList.add('active');
-        d.addEventListener('click', ()=>{ goTo(i); reset(); });
-        dotsWrap.appendChild(d);
-      });
-      const dots = Array.from(dotsWrap.children);
-
-      function show(i){
-        slides.forEach((s,si)=>{
-          s.classList.toggle('active', si===i);
-        });
-        dots.forEach((d,di)=>d.classList.toggle('active', di===i));
-        idx = i;
-      }
-      function nextSlide(){ show((idx+1)%slides.length); }
-      function prevSlide(){ show((idx-1+slides.length)%slides.length); }
-      function goTo(i){ show((i+slides.length)%slides.length); }
-
-      if(next) next.addEventListener('click', ()=>{ nextSlide(); reset(); });
-      if(prev) prev.addEventListener('click', ()=>{ prevSlide(); reset(); });
-
-      function start(){ timer = setInterval(nextSlide, AUTO); }
-      function reset(){ clearInterval(timer); start(); }
-
-      // pause on hover
-      const slider = document.getElementById('slider');
-      slider && slider.addEventListener('mouseenter', ()=> clearInterval(timer));
-      slider && slider.addEventListener('mouseleave', ()=> start());
-
-      // keyboard
-      document.addEventListener('keydown', (e)=>{ if(e.key==='ArrowRight') { nextSlide(); reset(); } if(e.key==='ArrowLeft') { prevSlide(); reset(); } });
-
-      // init
-      show(0); start();
-    })();
-
-    // smooth scroll and active nav highlight
-    (function(){
-      const navLinks = document.querySelectorAll('.nav-list a');
-      navLinks.forEach(a => {
-        a.addEventListener('click', function(e){
-          // let browser handle anchors, but mark active
-          navLinks.forEach(x => x.classList.remove('active'));
-          this.classList.add('active');
-        });
-      });
-
-      // reveal on scroll for sections (simple)
-      const sections = document.querySelectorAll('section');
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(en=>{
-          if(en.isIntersecting) en.target.style.transform='translateY(0)';
-        });
-      }, {threshold: 0.12});
-      sections.forEach(s => {
-        s.style.transform = 'translateY(8px)';
-        io.observe(s);
-      });
-    })();
-  </script>
 </body>
 </html>
