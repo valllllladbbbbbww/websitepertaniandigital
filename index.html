@@ -12,7 +12,7 @@
     header h1{font-size:22px;font-weight:600;}
     nav a{color:white;margin-left:20px;text-decoration:none;font-weight:500;transition:color .3s}
     nav a:hover{color:#a5d6a7;}
-    section{padding:100px 40px;min-height:100vh;animation:fadeIn 1s ease;}
+    section{padding:100px 40px;min-height:100vh;animation:fadeIn 1s ease;background:transparent}
     @keyframes fadeIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 
     .hero{background:linear-gradient(135deg,#81c784,#388e3c);color:#fff;text-align:center;padding:150px 40px;}
@@ -31,7 +31,25 @@
     /* Foto Petani Full Seperti Permintaan */
     .petani img{width:100%;height:600px;object-fit:cover;border-radius:15px;}
 
-    footer{text-align:center;padding:30px;background:#2e7d32;color:white;}
+    footer{text-align:center;padding:30px;background:#2e7d32;color:white;margin-top:40px}
+
+    /* Panduan Sosmed */
+    .guide{max-width:1000px;margin:30px auto;background:#fff;border-radius:16px;padding:22px;box-shadow:0 6px 18px rgba(0,0,0,0.07)}
+    .guide h3{color:#2e7d32;margin-bottom:8px}
+    .caption{background:#f1fff4;border:1px dashed #a5d6a7;padding:12px;border-radius:10px;margin:10px 0;white-space:pre-wrap}
+    .btn{display:inline-block;background:#2e7d32;color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;cursor:pointer;border:none}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:20px}
+    .card{background:#fff;border-radius:12px;padding:16px;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+    .small{font-size:14px;color:#666}
+
+    /* Responsive tweaks */
+    @media(max-width:760px){header{padding:12px 16px}section{padding:90px 18px}.hero{padding:120px 18px}.petani img{height:360px}}
+
+    /* copy hint */
+    .copy-hint{font-size:13px;color:#2e7d32;margin-left:8px}
+
+    /* simple anchor offset for fixed header */
+    .anchor-offset{scroll-margin-top:120px}
   </style>
 </head>
 <body>
@@ -42,15 +60,19 @@
       <a href="#materi">Materi</a>
       <a href="#tim">Tim</a>
       <a href="#petani">Petani Digital</a>
+      <a href="#sosmed">Cara Pemasaran</a>
+      <a href="#fitur">Fitur</a>
+      <a href="#tutorial">Tutorial Lengkap</a>
+      <a href="#referensi">Referensi</a>
     </nav>
   </header>
 
-  <section id="beranda" class="hero">
+  <section id="beranda" class="hero anchor-offset">
     <h2 class="text-3xl font-bold mb-4">PETANI DIGITAL, HASIL MAKSIMAL, SIAP BERKEMBANG.</h2>
     <p>Memanfaatkan teknologi digital untuk meningkatkan daya saing petani dan UMKM pertanian di sekitar Kampus Vokasi Jubung Universitas Jember.</p>
   </section>
 
-  <section id="materi">
+  <section id="materi" class="anchor-offset">
     <h2 style="text-align:center;color:#2e7d32;">Materi</h2><br>
     <div class="content">
       <p>Selama revolusi industri 4.0, kemajuan teknologi digital telah membawa perubahan besar dalam berbagai bidang kehidupan, termasuk sektor pertanian. Digitalisasi membuka peluang baru untuk manajemen bisnis, meningkatkan jaringan pasar, dan meningkatkan efisiensi produksi. Namun, sebagian besar petani tradisional dan pelaku Usaha Mikro, Kecil, dan Menengah (UMKM) pertanian belum mampu menyesuaikan diri dengan perubahan ini.</p><br>
@@ -60,64 +82,344 @@
     </div>
   </section>
 
-  <section id="tim">
+  <section id="tim" class="anchor-offset">
     <h2 style="text-align:center;color:#2e7d32;">Tim</h2>
     <div class="team-container">
-      <div class="member"><div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_c70945c3.jpg?updatedAt=1762850909209"></div><h3>Jesika Ayu Amanda</h3><p class="role">250803102002</p></div>
-      <div class="member"><div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.26_f52d2940.jpg?updatedAt=1762850615327"></div><h3>Steven Cristian Siswanto</h3><p class="role">250903101002</p></div>
-      <div class="member"><div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_5338be5f.jpg?updatedAt=1762850981762"></div><h3>Iis Nur Khoirunnisa</h3><p class="role">250903101020</p></div>
-      <div class="member"><div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.26_8f59d3d1.jpg?updatedAt=1762850531357"></div><h3>Valian Adib Widigda</h3><p class="role">250903101036</p></div>
-      <div class="member"><div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.26_27d1c4a6.jpg?updatedAt=1762850576072"></div><h3>Adiba Nabil Cesario</h3><p class="role">250903101038</p></div>
-      <div class="member"><div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_70f81bea.jpg?updatedAt=1762850888914"></div><h3>Rizquna Alya Nuryatun Azizah</h3><p class="role">250903101040</p></div>
-      <div class="member"><div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_71d73241.jpg?updatedAt=1762850939719"></div><h3>Azka Naysila Fahima Nadya</h3><p class="role">250903101042</p></div>
+      <div class="member"><div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_c70945c3.jpg?updatedAt=1762850909209" alt="Jesika"></div><h3>Jesika Ayu Amanda</h3><p class="role">250803102002</p></div>
+      <div class="member"><div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.26_f52d2940.jpg?updatedAt=1762850615327" alt="Steven"></div><h3>Steven Cristian Siswanto</h3><p class="role">250903101002</p></div>
+      <div class="member"><div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_5338be5f.jpg?updatedAt=1762850981762" alt="Iis"></div><h3>Iis Nur Khoirunnisa</h3><p class="role">250903101020</p></div>
+      <div class="member"><div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.26_8f59d3d1.jpg?updatedAt=1762850531357" alt="Valian"></div><h3>Valian Adib Widigda</h3><p class="role">250903101036</p></div>
+      <div class="member"><div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.26_27d1c4a6.jpg?updatedAt=1762850576072" alt="Adiba"></div><h3>Adiba Nabil Cesario</h3><p class="role">250903101038</p></div>
+      <div class="member"><div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_70f81bea.jpg?updatedAt=1762850888914" alt="Rizquna"></div><h3>Rizquna Alya Nuryatun Azizah</h3><p class="role">250903101040</p></div>
+      <div class="member"><div class="avatar"><img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2015.37.25_71d73241.jpg?updatedAt=1762850939719" alt="Azka"></div><h3>Azka Naysila Fahima Nadya</h3><p class="role">250903101042</p></div>
     </div>
   </section>
 
-  <section id="petani">
+  <section id="petani" class="anchor-offset">
     <h2 style="text-align:center;color:#2e7d32;">Petani Digital</h2>
     <div class="petani-container">
       <div class="petani">
-        <img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2018.23.12_2b5f2a56.jpg?updatedAt=1762860350875">
+        <img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2018.23.12_2b5f2a56.jpg?updatedAt=1762860350875" alt="Wisnu">
         <h3>Wisnu</h3>
         <p>Sudah menjadi petani sejak tahun 2011. Menanam Way Apo, Sunggal, Inpari 32, Situ Bagendit. Hasil panen dijual ke pembibitan dan perusahaan beras. Berpengalaman panjang hingga mampu menguliahkan anak-anaknya.</p>
       </div>
 
       <div class="petani">
-        <img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2018.22.44_52ad97c9.jpg?updatedAt=1762860350992">
+        <img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-11%20pukul%2018.22.44_52ad97c9.jpg?updatedAt=1762860350992" alt="Ali Topan">
         <h3>Ali Topan</h3>
         <p>Aktif membuat konten TikTok sebagai "alitopan". Bekerja di Mitra Tani 15 tahun, bermitra sebagai petani selama 1 tahun. Menanam okra sistem kemitraan, harga jual mengikuti kontrak tetap.</p>
       </div>
 
       <div class="petani">
-        <img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-29%20pukul%2007.40.47_d2f3124a.jpg">
+        <img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-29%20pukul%2007.40.47_d2f3124a.jpg" alt="Amiruddin">
         <h3>Amiruddin</h3>
-        <p>Bapak Amiruddin berasal dari Durjo, Karangpring, Jember. Usianya 56 tahun. Ia sudah bekerja sebagai petani selama sekitar sepuluh tahun. Ia memiliki sawah sendiri di Durjo dan mengerjakan panennya sendiri. Ia menjual hasil panen hanya kepada seorang teman bernama Pak Dayat. Ia belum pernah mencoba menjual hasil tani secara online. Ia juga tidak memiliki handphone. Ia menanam padi dan timun. Timun dipanen setiap satu minggu. Harga timun sekitar 550 rupiah per kilogram. Padi tidak ia jual dan ia gunakan untuk kebutuhan sendiri.</p>
+        <p>Bapak Amiruddin berasal dari Durjo, Karangpring, Jember. Usianya 56 tahun. Ia sudah bekerja sebagai petani selama sekitar sepuluh tahun. Ia memiliki sawah sendiri di Durjo dan mengerjakan panennya sendiri. Ia menjual hasil panen hanya kepada seorang teman bernama Pak Dayat. Ia belum pernah mencoba menjual hasil tani secara online. Ia juga tidak memiliki handphone. Ia menanam padi dan timun. Timun dipanen setiap satu minggu. Harga timun sekitar 550 rupiah per kilogram. Padi tidak ia jual dan ia gunakan untuk kebutuhan sendiri.</p>
       </div>
 
       <div class="petani">
-        <img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-29%20pukul%2007.40.16_fe2c3e3a.jpg">
+        <img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-29%20pukul%2007.40.16_fe2c3e3a.jpg" alt="Samsul">
         <h3>Samsul</h3>
-        <p>Pak Samsul berumur 60 tahun. Ia bekerja sebagai petani selama sekitar delapan tahun. Ia pernah menjadi kuli bangunan bersama Pak Dayat dan juga bekerja pada beberapa orang lain. Ia belum pernah memanen hasil taninya sendiri. Ia juga belum pernah memasarkan hasil taninya lewat platform digital.</p>
+        <p>Pak Samsul berumur 60 tahun. Ia bekerja sebagai petani selama sekitar delapan tahun. Ia pernah menjadi kuli bangunan bersama Pak Dayat dan juga bekerja pada beberapa orang lain. Ia belum pernah memanen hasil taninya sendiri. Ia juga belum pernah memasarkan hasil taninya lewat platform digital.</p>
       </div>
 
       <div class="petani">
-        <img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-29%20pukul%2007.44.45_16210341.jpg">
+        <img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-29%20pukul%2007.44.45_16210341.jpg" alt="Jarwo">
         <h3>Jarwo</h3>
-        <p>Pak Jarwo menjadi petani selama 8 tahun, selama menjadi petani, beliau menjual hasil pertaniannya langsung kepada Penebas/pemborong, beliau tidak pernah/tidak paham bagaimana cara memasarkan melalui internet.</p>
+        <p>Pak Jarwo menjadi petani selama 8 tahun, selama menjadi petani, beliau menjual hasil pertaniannya langsung kepada Penebas/pemborong, beliau tidak pernah/tidak paham bagaimana cara memasarkan melalui internet.</p>
       </div>
 
-      
       <div class="petani">
-        <img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-29%20pukul%2007.41.13_c9724c8e.jpg">
+        <img src="https://ik.imagekit.io/vmqayitfo/Gambar%20WhatsApp%202025-11-29%20pukul%2007.41.13_c9724c8e.jpg" alt="Toni">
         <h3>Toni</h3>
-        <p>Pak Toni sudah bekerja sebagai petani selama dua puluh tahun. Ia menjual hasil taninya di wilayah Jubung lalu memakai pendapatannya untuk modal usaha berikutnya. Ia belum pernah mencoba memasarkan produk taninya melalui platform digital.</p>
+        <p>Pak Toni sudah bekerja sebagai petani selama dua puluh tahun. Ia menjual hasil taninya di wilayah Jubung lalu memakai pendapatannya untuk modal usaha berikutnya. Ia belum pernah mencoba memasarkan produk taninya melalui platform digital.</p>
       </div>
 
+    </div>
+  </section>
+
+  <!-- Cara Pemasaran Sosial Media -->
+  <section id="sosmed" class="anchor-offset">
+    <h2 style="text-align:center;color:#2e7d32;">Tata Cara Menggunakan Media Sosial untuk Pemasaran</h2>
+    <div class="guide">
+      <h3>Ringkasan singkat</h3>
+      <p class="small">Panduan praktis ini membantu petani memasarkan produk melalui Facebook, Instagram, WhatsApp, dan TikTok. Disertai contoh caption yang siap pakai dan tombol salin cepat.</p>
+
+      <div style="margin-top:14px">
+        <h3>Langkah umum sebelum posting</h3>
+        <ol style="margin-left:18px;margin-top:8px;line-height:1.6">
+          <li>Ambil foto produk yang jelas: pencahayaan alami, close-up hasil panen, tunjukkan kualitas.</li>
+          <li>Buat caption singkat & jujur: sebutkan berat, harga, ketersediaan, cara order.</li>
+          <li>Sertakan kontak (WA) dan lokasi—biar pembeli tahu dari mana barang berasal.</li>
+          <li>Gunakan tagar relevan: #timun #sayursegar #petanidigital #Jember</li>
+        </ol>
+      </div>
+
+      <div style="margin-top:14px">
+        <h3>Contoh caption Facebook (siap pakai)</h3>
+        <div class="caption" id="captionFb">Hai haii Ibu/Bapak❗🥒
+Yang butuh timun segar buat masak atau jualan, aku ready yaa 💚
+
+💰 Harga:
+• 1 kg = Rp 8.000
+• Beli >3 kg cuma Rp 7.000/kg
+
+Fresh tiap hari, langsung dari kebun. Dijamin bagus & renyah!
+Yang mau order bisa langsung WA aku ya 👉 0812-3456-7890
+Monggoo, silakan… yuk belanja sayur sehat berkualitas ✨</div>
+        <div style="margin-top:8px">
+          <button class="btn" onclick="copyText('captionFb')">Salin Caption Facebook</button>
+          <span class="copy-hint" id="copiedFb"></span>
+        </div>
+      </div>
+
+      <div style="margin-top:14px">
+        <h3>Contoh caption WhatsApp (format pesan)</h3>
+        <div class="caption" id="captionWa">Halo, saya punya timun segar nih!
+Harga: Rp 8.000/kg (potongan untuk pembelian >3kg).
+Stok terbatas, langsung WA ke 0812-3456-7890 ya. Terima kasih! 💚</div>
+        <div style="margin-top:8px"><button class="btn" onclick="copyText('captionWa')">Salin Caption WA</button><span class="copy-hint" id="copiedWa"></span></div>
+      </div>
+
+      <div style="margin-top:14px">
+        <h3>Tips singkat per platform</h3>
+        <ul style="margin-left:18px;line-height:1.6">
+          <li><strong>Facebook:</strong> Gunakan grup jual beli lokal + Marketplace, sertakan foto & lokasi.</li>
+          <li><strong>Instagram:</strong> Upload foto di feed + story; pakai hashtag & highlight kontak.</li>
+          <li><strong>WhatsApp:</strong> Buat katalog di WA Business, gunakan pesan otomatis untuk jam offline.</li>
+          <li><strong>TikTok:</strong> Buat video singkat proses panen atau test rasa — audience suka konten authentic.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Fitur yang mendukung pertanian -->
+  <section id="fitur" class="anchor-offset">
+    <h2 style="text-align:center;color:#2e7d32;">Fitur Pendukung</h2>
+    <div class="content">
+      <p>Kami menambahkan fitur yang berguna untuk mendukung kegiatan petani digital: ramalan cuaca berdasarkan lokasi, menu referensi tutorial YouTube, serta fitur katalog & order sederhana.</p>
+
+      <div class="features">
+        <div class="card">
+          <h3>Ramalan Cuaca (lokal)</h3>
+          <p class="small">Klik "Gunakan Lokasi" untuk menampilkan cuaca saat ini dan prakiraan singkat. Sistem memakai layanan open API (tanpa API key) ketika dijalankan di browser.</p>
+          <div style="margin-top:10px">
+            <button class="btn" id="btn-locate">Gunakan Lokasi</button>
+          </div>
+          <div id="weather" style="margin-top:12px;font-size:15px"></div>
+        </div>
+
+        <div class="card">
+          <h3>Katalog & Order Cepat</h3>
+          <p class="small">Sederhana: tampilkan produk, harga, tombol order yang membuka chat WA dengan pesan terisi.</p>
+          <div style="margin-top:10px">
+            <div style="display:flex;gap:8px;align-items:center"><strong>Timun</strong><span class="small">Rp 8.000/kg</span></div>
+            <div style="margin-top:8px"><button class="btn" onclick="orderWhatsApp('Timun 1kg')">Order via WA</button></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Fitur Lain: Reminder Panen</h3>
+          <p class="small">Masukkan tanggal tanam untuk mendapatkan estimasi panen (sederhana, berbasis hari)</p>
+          <div style="margin-top:10px">
+            <input type="date" id="tglTanam" style="padding:8px;border-radius:8px;border:1px solid #ddd" />
+            <button class="btn" style="margin-left:8px" onclick="estimasiPanen()">Estimasi Panen</button>
+            <div id="hasilPanen" style="margin-top:8px;font-size:14px;color:#444"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tutorial Lengkap (Masuk ke menu) -->
+  <section id="tutorial" class="anchor-offset">
+    <h2 style="text-align:center;color:#2e7d32;">Tutorial Pemasaran Lengkap (FB • IG • TikTok)</h2>
+    <div class="content" style="margin-top:18px">
+      <h3>1. Facebook</h3>
+      <p><strong>Cara Upload:</strong></p>
+      <ol style="margin-left:18px;line-height:1.6">
+        <li>Buka aplikasi Facebook.</li>
+        <li>Klik <strong>Apa yang Anda pikirkan?</strong></li>
+        <li>Pilih <strong>Foto/Video</strong> → unggah foto produk atau kegiatan bertani.</li>
+        <li>Tempel caption otomatis (tersedia di halaman Cara Pemasaran).</li>
+        <li>Klik <strong>Bagikan Sekarang</strong>.</li>
+      </ol>
+      <p><strong>Tips:</strong> Upload foto jelas, gunakan jam posting pagi & sore, dan promosikan ke grup lokal.</p>
+
+      <hr style="margin:16px 0">
+
+      <h3>2. Instagram</h3>
+      <p><strong>Cara Upload:</strong></p>
+      <ol style="margin-left:18px;line-height:1.6">
+        <li>Tekan tombol <strong>+</strong>.</li>
+        <li>Pilih foto/video → Next → isi caption dan lokasi.</li>
+        <li>Tambahkan ke Story untuk jangkauan lebih luas.</li>
+      </ol>
+
+      <hr style="margin:16px 0">
+
+      <h3>3. TikTok</h3>
+      <p><strong>Cara Upload & Tips FYP:</strong></p>
+      <ol style="margin-left:18px;line-height:1.6">
+        <li>Rekam video singkat (6–20 detik) close-up produk atau proses panen.</li>
+        <li>Tambahkan musik populer dan teks besar yang menyebutkan harga & nomor WA.</li>
+        <li>Gunakan hashtag lokasi dan ajak penonton berkomentar lokasi mereka.</li>
+      </ol>
+    </div>
+
+    <div class="content" style="margin-top:20px">
+      <h3>RAMALAN CUACA & SARAN TANAMAN</h3>
+      <p class="small">Perkiraan cuaca dan rekomendasi tanaman (umum — sesuaikan dengan lokasi nyata).</p>
+
+      <table style="width:100%;border-collapse:collapse;margin-top:12px">
+        <thead>
+          <tr style="background:#f1fff4">
+            <th style="padding:8px;border:1px solid #e6e6e6;text-align:left">Suhu</th>
+            <th style="padding:8px;border:1px solid #e6e6e6;text-align:left">Kondisi</th>
+            <th style="padding:8px;border:1px solid #e6e6e6;text-align:left">Cocok Ditanam</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:8px;border:1px solid #e6e6e6">20–25°C</td><td style="padding:8px;border:1px solid #e6e6e6">Dingin-sejuk</td><td style="padding:8px;border:1px solid #e6e6e6">Kentang, kol, wortel, sawi, stroberi</td></tr>
+          <tr><td style="padding:8px;border:1px solid #e6e6e6">25–30°C</td><td style="padding:8px;border:1px solid #e6e6e6">Ideal</td><td style="padding:8px;border:1px solid #e6e6e6">Padi, jagung, cabai, tomat, kacang panjang</td></tr>
+          <tr><td style="padding:8px;border:1px solid #e6e6e6">30–34°C</td><td style="padding:8px;border:1px solid #e6e6e6">Panas</td><td style="padding:8px;border:1px solid #e6e6e6">Semangka, melon, timun, terong, okra</td></tr>
+          <tr><td style="padding:8px;border:1px solid #e6e6e6">&gt;34°C</td><td style="padding:8px;border:1px solid #e6e6e6">Sangat panas</td><td style="padding:8px;border:1px solid #e6e6e6">Singkong, ubi jalar, sorgum</td></tr>
+        </tbody>
+      </table>
+
+      <h4 style="margin-top:14px">Estimasi Waktu Panen (Tambahan)</h4>
+      <table style="width:100%;border-collapse:collapse;margin-top:8px">
+        <thead>
+          <tr style="background:#f9f9f9"><th style="padding:8px;border:1px solid #e6e6e6;text-align:left">Tanaman</th><th style="padding:8px;border:1px solid #e6e6e6;text-align:left">Lama Panen</th></tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:8px;border:1px solid #e6e6e6">Padi</td><td style="padding:8px;border:1px solid #e6e6e6">90–130 hari</td></tr>
+          <tr><td style="padding:8px;border:1px solid #e6e6e6">Jagung</td><td style="padding:8px;border:1px solid #e6e6e6">90–110 hari</td></tr>
+          <tr><td style="padding:8px;border:1px solid #e6e6e6">Timun</td><td style="padding:8px;border:1px solid #e6e6e6">35–50 hari</td></tr>
+          <tr><td style="padding:8px;border:1px solid #e6e6e6">Cabai</td><td style="padding:8px;border:1px solid #e6e6e6">75–90 hari</td></tr>
+          <tr><td style="padding:8px;border:1px solid #e6e6e6">Sawi</td><td style="padding:8px;border:1px solid #e6e6e6">25–35 hari</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Referensi Tutorial YouTube & Katalog Cepat -->
+  <section id="referensi" class="anchor-offset">
+    <h2 style="text-align:center;color:#2e7d32;">Referensi & Katalog Cepat</h2>
+    <div class="content" style="text-align:left">
+      <p>Beberapa sumber video yang bermanfaat (klik untuk membuka di YouTube):</p>
+      <ul style="margin-top:12px;line-height:1.8">
+        <li><a href="https://youtu.be/WXLW6mPvYVQ?si=a8oweMq-FQkSflSk" target="_blank" rel="noopener noreferrer">Tata Cara Pemasaran</a> — Video tentang tata cara pemasaran untuk menarik konsumen</li>
+        <li><a href="https://youtu.be/G1MjF639DrY?si=UAq494JbxjQqUyL0" target="_blank" rel="noopener noreferrer">Tanam Padi Organik, modal minim, hasil melimpah</a> — Cara budidaya padi dari pemilihan bibit hingga panen.</li>
+        <li><a href="https://youtu.be/1NzSYee053U?si=uy0Nw1Njz_s1650L" target="_blank" rel="noopener noreferrer">Cara membuat POC super dahsyat untuk menyuburkan tanaman</a></li>
+      </ul>
+
+      <hr style="margin:14px 0">
+
+      <h3>Katalog Cepat (Order via WhatsApp)</h3>
+      <p>Semua tombol membuka WA dan mengisi pesan otomatis.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px">
+        <div style="background:#fff;padding:12px;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,0.06)">
+          <strong>Timun</strong><div class="small">Rp 2.000/kg</div>
+          <div style="margin-top:8px"><button class="btn" onclick="orderWhatsApp('Timun, 1 kg')">Pesan via WA</button></div>
+        </div>
+        <div style="background:#fff;padding:12px;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,0.06)">
+          <strong>Beras</strong><div class="small">Rp 11.000/kg</div>
+          <div style="margin-top:8px"><button class="btn" onclick="orderWhatsApp('Beras, 1 kg')">Pesan via WA</button></div>
+        </div>
+        <div style="background:#fff;padding:12px;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,0.06)">
+          <strong>Jagung Manis</strong><div class="small">Rp 5.000/kg</div>
+          <div style="margin-top:8px"><button class="btn" onclick="orderWhatsApp('Jagung Manis, 1 kg')">Pesan via WA</button></div>
+        </div>
+      </div>
+
+      <p style="margin-top:12px;font-size:14px;color:#444">Format pesan otomatis:</p>
+      <pre style="background:#f7f7f7;padding:10px;border-radius:8px;border:1px solid #eee">Halo, saya mau pesan:
+Nama Produk: _____
+Jumlah: _____ kg
+Alamat: _____
+Terima kasih!</pre>
+      <p class="small">Nomor tujuan default untuk tombol: <strong>085708150445</strong> (bisa diganti di script).</p>
     </div>
   </section>
 
   <footer>
     <p>© 2025 Proyek MKWK - Petani Digital Universitas Jember</p>
   </footer>
+
+  <script>
+    // Copy to clipboard helper (menggunakan textContent agar newline ikut tersalin)
+    function copyText(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      const text = el.textContent || el.innerText || '';
+      navigator.clipboard.writeText(text).then(()=>{
+        const hintId = id === 'captionFb' ? 'copiedFb' : id === 'captionWa' ? 'copiedWa' : '';
+        if(hintId){
+          const hint = document.getElementById(hintId);
+          hint.innerText = 'Disalin!';
+          setTimeout(()=>hint.innerText='',1800);
+        }
+      }).catch(()=>alert('Gagal menyalin. Silakan salin manual.'));
+    }
+
+    // Order via WA helper: open chat with prefilled message (works on mobile/WA Web)
+    function orderWhatsApp(item){
+      // nomor tujuan (tanpa 0/format) -> ubah sesuai kebutuhan
+      const target = '085708150445';
+      // format for wa.me requires country code; if no country code provided, assume Indonesia (+62)
+      // normalize: if starts with 0 -> replace with 62
+      let phone = target.replace(/[^0-9]/g,'');
+      if(phone.startsWith('0')) phone = '62' + phone.slice(1);
+      const text = encodeURIComponent('Halo, saya mau pesan: ' + item + ' (via situs Petani Digital).');
+      const url = 'https://wa.me/' + phone + '?text=' + text;
+      window.open(url, '_blank');
+    }
+
+    // Estimasi panen (contoh: timun 30 hari after tanam)
+    function estimasiPanen(){
+      const t = document.getElementById('tglTanam').value;
+      if(!t) return alert('Pilih tanggal tanam terlebih dahulu');
+      const tanam = new Date(t);
+      const est = new Date(tanam.getTime() + (30*24*60*60*1000)); // 30 hari contoh
+      // format tanggal lokal
+      document.getElementById('hasilPanen').innerText = 'Perkiraan panen: '+est.toLocaleDateString();
+    }
+
+    // Weather using browser geolocation + open-meteo (no API key)
+    document.getElementById('btn-locate').addEventListener('click', ()=>{
+      const weatherEl = document.getElementById('weather');
+      weatherEl.innerText = 'Mencari lokasi...';
+      if(!navigator.geolocation){ weatherEl.innerText = 'Geolocation tidak didukung oleh browser.'; return; }
+      navigator.geolocation.getCurrentPosition(async (pos)=>{
+        const lat = pos.coords.latitude.toFixed(4);
+        const lon = pos.coords.longitude.toFixed(4);
+        weatherEl.innerHTML = 'Koordinat: '+lat+', '+lon+'<br>Memuat prakiraan...';
+        try{
+          const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+'&current_weather=true&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto');
+          const data = await res.json();
+          if(data.current_weather){
+            const cw = data.current_weather;
+            const daily = data.daily;
+            let html = '<strong>Sekarang:</strong> '+cw.temperature+' °C, kecepatan angin '+cw.windspeed+' m/s<br>';
+            if(daily && daily.time){
+              html += '<br><strong>3 Hari ke depan:</strong><br>';
+              for(let i=0;i<3 && i<daily.time.length;i++){
+                html += daily.time[i]+': max '+daily.temperature_2m_max[i]+'°C, min '+daily.temperature_2m_min[i]+'°C<br>';
+              }
+            }
+            weatherEl.innerHTML = html;
+          } else {
+            weatherEl.innerText = 'Data cuaca tidak tersedia.';
+          }
+        }catch(e){
+          weatherEl.innerText = 'Gagal mengambil data cuaca.';
+        }
+      }, (err)=>{
+        document.getElementById('weather').innerText = 'Izin lokasi ditolak atau gagal mendapatkan lokasi.';
+      });
+    });
+  </script>
 </body>
 </html>
